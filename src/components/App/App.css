@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f4f7;
+}
+
+.main {
+  width: 100%;
+}
+
+.main .nav-bar {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.main h1 {
+  color: #3dd367;
+  margin: 0 auto;
+  padding: 20px;
+}
