@@ -25,11 +25,18 @@ class Coininfo extends Component {
     }
   }
 
+  _chartLink = (coinName) => {
+    if (coinName !== "btc")
+      window.location.href="https://coinone.co.kr/chart/?site=Coinone" + coinName.toUpperCase() + "&unit_time=15m";
+    else
+      window.location.href="https://coinone.co.kr/chart/?site=Coinone&unit_time=15m";
+  }
+
   render() {
     let coin = this.props.coin;
 
     return (
-      <div id={coin.currency} className="coin-card">
+      <div id={coin.currency} className="coin-card" onClick={this._chartLink.bind(this, coin.currency)}>
         <h2>{coin.currency.toUpperCase()}</h2>
         <h3> &#x20A9; {coin.last}</h3>
       </div>

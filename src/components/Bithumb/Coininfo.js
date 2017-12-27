@@ -25,12 +25,16 @@ class Coininfo extends Component {
     }
   }
 
+  _chartLink = () => {
+    window.location.href="https://www.bithumb.com/";
+  }
+
   render() {
     let coin = this.props.coin;
     let name = this.props.name
 
     return (
-      <div id={"bithumb-" + name} className="coin-card">
+      <div id={"bithumb-" + name} className="coin-card" onClick={this._chartLink.bind(this)}>
         <h2>{name}</h2>
         <h3> &#x20A9; {coin.sell_price}</h3>
       </div>
