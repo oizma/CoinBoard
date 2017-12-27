@@ -10,11 +10,11 @@ class Coininfo extends Component {
   _changeCSS = (id, change) => {
     let lastStyle = document.getElementById(id);
 
-    if (change > 0) {
+    if (change < 0) {
       lastStyle.style.background = "#60baf7";
       lastStyle.style.color="white";
     }
-    else if (change < 0) {
+    else if (change > 0) {
       lastStyle.style.background = "#f78060";
       lastStyle.style.color="white";
     }
