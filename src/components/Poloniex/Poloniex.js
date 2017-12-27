@@ -16,17 +16,17 @@ class Poloniex extends Component {
       request('https://poloniex.com/public?command=returnTicker', (error, response, body) => {
         this.setState({
           pre: this.state.info,
-          info: JSON.parse(body)
+          info: (body) ? JSON.parse(body) : null
         });
       });
-    }, 1000);
+    }, 5000);
   }
 
   _initializeData = () => {
     request('https://poloniex.com/public?command=returnTicker', (error, response, body) => {
       this.setState({
-        pre: JSON.parse(body),
-        info: JSON.parse(body)
+        pre: (body) ? JSON.parse(body) : null,
+        info: (body) ? JSON.parse(body) : null
       });
     });
   }

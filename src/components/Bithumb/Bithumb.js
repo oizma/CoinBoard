@@ -17,10 +17,10 @@ class Bithumb extends Component {
         request('https://api.bithumb.com/public/ticker/all', (error, response, body) => {
           this.setState({
             pre: this.state.info,
-            info: JSON.parse(body)
+            info: (body) ? JSON.parse(body) : null
           });
         });
-      }, 1000);
+      }, 5000);
     } catch (exception) {
       console.log("Bithumb server down!!!");
     }
@@ -29,8 +29,8 @@ class Bithumb extends Component {
   _initializeData = () => {
     request('https://api.bithumb.com/public/ticker/all', (error, response, body) => {
       this.setState({
-        pre: JSON.parse(body),
-        info: JSON.parse(body)
+        pre: (body) ? JSON.parse(body) : null,
+        info: (body) ? JSON.parse(body) : null
       });
     });
   }

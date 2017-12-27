@@ -5,6 +5,7 @@ class Coininfo extends Component {
 
   componentDidUpdate() {
     this._changeCSS(this.props.coin.currency, this.props.coin.last - this.props.pre.last);
+    setTimeout(() => {this._changeCSS(this.props.coin.currency, 0)}, 500);
   }
 
   _changeCSS = (id, change) => {

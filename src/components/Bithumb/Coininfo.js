@@ -5,6 +5,7 @@ class Coininfo extends Component {
 
   componentDidUpdate() {
     this._changeCSS("bithumb-" + this.props.name, this.props.coin.sell_price - this.props.pre.sell_price);
+    setTimeout(() => {this._changeCSS("bithumb-" + this.props.name, 0)}, 500);
   }
 
   _changeCSS = (id, change) => {
