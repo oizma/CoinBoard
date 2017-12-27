@@ -1,5 +1,5 @@
 import React from 'react';
-import { Coinone, Poloniex } from '../'
+import { Coinone, Poloniex, Bithumb } from '../'
 
 import './CoinTable.css';
 
@@ -49,6 +49,11 @@ class CoinTable extends React.Component {
         <div className="market">
           <h2 className="coin-title">Coinone</h2>
           <Coinone/>
+        </div>
+
+        <div className="market">
+          <h2 className="coin-title">Bithumb</h2>
+          <Bithumb/>
         </div>
 
         <div className="market">
