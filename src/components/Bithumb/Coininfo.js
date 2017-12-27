@@ -25,8 +25,22 @@ class Coininfo extends Component {
     }
   }
 
-  _chartLink = () => {
-    window.location.href="https://www.bithumb.com/";
+  _chartLink = (coinName) => {
+    let filter = "win16|win32|win64|mac|macintel";
+
+    if ( navigator.platform ) {
+      if ( filter.indexOf( navigator.platform.toLowerCase() ) < 0 ) {
+        // mobile
+        if (coinName == "BTC")
+          window.location.href="https://m.bithumb.com/u2/US205";
+        else
+          window.location.href="https://m.bithumb.com/trade/chart/" + coinName;
+      }
+      else {
+        // pc
+        window.location.href="http://index.bithumb.com/coinsdaq/index.php?coin=" + coinName;
+      }
+    }
   }
 
   render() {
@@ -34,7 +48,7 @@ class Coininfo extends Component {
     let name = this.props.name
 
     return (
-      <div id={"bithumb-" + name} className="coin-card" onClick={this._chartLink.bind(this)}>
+      <div id={"bithumb-" + name} className="coin-card" onClick={this._chartLink.bind(this, name)}>
         <h2>{name}</h2>
         <h3> &#x20A9; {coin.sell_price}</h3>
       </div>

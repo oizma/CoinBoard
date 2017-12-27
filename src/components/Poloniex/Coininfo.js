@@ -26,7 +26,18 @@ class Coininfo extends Component {
   }
 
   _chartLink = (coinName) => {
-    window.location.href="https://poloniex.com/exchange#" + coinName;
+    let filter = "win16|win32|win64|mac|macintel";
+
+    if ( navigator.platform ) {
+      if ( filter.indexOf( navigator.platform.toLowerCase() ) < 0 ) {
+        // mobile
+        window.location.href="https://m.poloniex.com/#/exchange/" + coinName;
+      }
+      else {
+        // pc
+        window.location.href="https://poloniex.com/exchange#" + coinName;
+      }
+    }
   }
 
   render() {
