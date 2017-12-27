@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Coininfo.css';
+import '../CoinTable/Coininfo.css';
 
 class Coininfo extends Component {
 
@@ -32,7 +32,7 @@ class Coininfo extends Component {
   render() {
     let info = this.props.info;
     let name = this.props.name;
-    
+
     return (
       <div id={name} className="coin-card" onClick={this._chartLink.bind(this, name)}>
         <h2>{name}</h2>

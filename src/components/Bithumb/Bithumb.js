@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import request from 'request';
 import Coininfo from './Coininfo'
-import './Bithumb.css';
+import '../CoinTable/Market.css';
 
 class Bithumb extends Component {
 

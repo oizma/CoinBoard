@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import request from 'request';
 import Coininfo from './Coininfo'
-import './Coinone.css';
+import '../CoinTable/Market.css';
 
 class Coinone extends Component {
 

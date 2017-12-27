@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import request from 'request';
 import Coininfo from './Coininfo';
-import './Poloniex.css';
+import '../CoinTable/Market.css';
 
 class Poloniex extends Component {
 
@@ -157,7 +157,7 @@ class Poloniex extends Component {
     let pre = this.state.pre;
 
     return (
-      <div id="polo-usdt" className="coin-table-obj">
+      <div className="coin-table-obj">
         <Coininfo name="USDT_BTC" info={info.USDT_BTC} pre={pre.USDT_BTC}/>
         <Coininfo name="USDT_BCH" info={info.USDT_BCH} pre={pre.USDT_BCH}/>
         <Coininfo name="USDT_DASH" info={info.USDT_DASH} pre={pre.USDT_DASH}/>

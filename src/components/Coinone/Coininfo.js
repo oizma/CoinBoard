@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Coininfo.css';
+import '../CoinTable/Coininfo.css';
 
 class Coininfo extends Component {
 

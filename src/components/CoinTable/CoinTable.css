@@ -44,19 +44,3 @@
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-
-#polo-btc-market {
-  display: flex;
-}
-
-#polo-eth-market {
-  display: none;
-}
-
-#polo-usdt-market {
-  display: none;
-}
-
-#polo-xmr-market {
-  display: none;
-}
