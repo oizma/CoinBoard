@@ -3,12 +3,9 @@
   text-align: center;
 }
 
-.coin-table-obj {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+.market {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .coin-title {
@@ -17,4 +14,49 @@
   margin-bottom: 3px;
   padding: 10px;
   background-color: white;
+}
+
+.poloniex-button-group {
+  width: 100%;
+  margin: 0;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.poloniex-button-group .poloniex-button {
+  padding: 10px;
+  cursor: pointer;
+  margin: 3px;
+  background-color: white;
+  flex: 1;
+  padding: 20px;
+}
+
+.poloniex-button-group .poloniex-button:hover {
+  opacity: 0.5;
+}
+
+.polo-tab {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#polo-btc-market {
+  display: flex;
+}
+
+#polo-eth-market {
+  display: none;
+}
+
+#polo-usdt-market {
+  display: none;
+}
+
+#polo-xmr-market {
+  display: none;
 }

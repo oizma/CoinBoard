@@ -3,11 +3,14 @@
 }
 
 body {
+  display: flex;
+  justify-content: center;
   background-color: #f2f4f7;
 }
 
 .main {
   width: 100%;
+  max-width: 900px;
 }
 
 .main .nav-bar {

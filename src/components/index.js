@@ -1,5 +1,6 @@
 import App from './App/App.js';
 import CoinTable from './CoinTable/CoinTable';
-import CoinInfo from './CoinInfo/CoinInfo';
+import Coinone from './Coinone/Coinone';
+import Poloniex from './Poloniex/Poloniex'
 
-export { App, CoinTable, CoinInfo };
+export { App, CoinTable, Coinone, Poloniex };
