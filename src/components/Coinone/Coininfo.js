@@ -3,7 +3,7 @@ import './Coininfo.css';
 
 class Coininfo extends Component {
 
-  componentWillUpdate() {
+  componentDidUpdate() {
     this._changeCSS(this.props.coin.currency, this.props.coin.last - this.props.pre.last);
   }
 

@@ -20,7 +20,7 @@ class Coinone extends Component {
             info: JSON.parse(body)
           });
         });
-      }, 3000);
+      }, 1000);
     } catch (exception) {
       console.log("coinone server down!!!");
     }

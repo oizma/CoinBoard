@@ -19,7 +19,7 @@ class Poloniex extends Component {
           info: JSON.parse(body)
         });
       });
-    }, 3000);
+    }, 1000);
   }
 
   _initializeData = () => {
