@@ -4,17 +4,16 @@ import '../CoinTable/Coininfo.css';
 class Coininfo extends Component {
 
   componentDidMount() {
-    let id = "bithumb-" + this.props.name;
-    let percent = ((this.props.coin.sell_price/this.props.coin.opening_price - 1) * 100).toFixed(2);
+    let id = "bitfinex-" + this.props.info[0];
+    let percent = (this.props.info[6] * 100);
     this._changePercentCSS(id, percent);
   }
 
   componentDidUpdate() {
-    let coin = this.props.coin;
-    let name = this.props.name;
-    let change = this.props.coin.sell_price - this.props.pre.sell_price;
-    let id = "bithumb-" + name;
-    let percent = ((coin.sell_price/coin.opening_price - 1) * 100).toFixed(2);
+    let name = this.props.info[0];
+    let change = this.props.info[7] - this.props.pre[7];
+    let id = "bitfinex-" + name;
+    let percent = (this.props.info[6] * 100);
 
     this._changeCSS(id, change, percent);
     setTimeout(() => {this._changeCSS(id, 0, percent)}, 500);
@@ -57,33 +56,31 @@ class Coininfo extends Component {
 
 
   _chartLink = (coinName) => {
+    coinName = coinName.slice(1);
     let filter = "win16|win32|win64|mac|macintel";
 
     if ( navigator.platform ) {
       if ( filter.indexOf( navigator.platform.toLowerCase() ) < 0 ) {
         // mobile
-        if (coinName === "BTC")
-          window.location.href="https://m.bithumb.com/u2/US205";
-        else
-          window.location.href="https://m.bithumb.com/trade/chart/" + coinName;
+        window.location.href="https://www.bitfinex.com/t/+" + coinName;
       }
       else {
         // pc
-        window.location.href="http://index.bithumb.com/coinsdaq/index.php?coin=" + coinName;
+        window.location.href="https://www.bitfinex.com/t/" + coinName;
       }
     }
   }
 
   render() {
-    let coin = this.props.coin;
     let name = this.props.name;
-    let id = "bithumb-" + name;
-    let percent = ((coin.sell_price/coin.opening_price - 1) * 100).toFixed(2);
+    let tName = this.props.tName;
+    let id = "bitfinex-" + this.props.info[0];
+    let percent = (this.props.info[6] * 100).toFixed(2);
 
     return (
-      <div id={id} className="coin-card" onClick={this._chartLink.bind(this, name)}>
+      <div id={id} className="coin-card" onClick={this._chartLink.bind(this, tName)}>
         <h2>{name}</h2>
-        <p className="detail">&#x20A9; {coin.sell_price}</p>
+        <p className="detail">$ {this.props.info[7]}</p>
         <p id={id + "-percent"} className="detail">{(percent > 0) ? ("+" + percent + "%") : percent + "%" }</p>
       </div>
     );
